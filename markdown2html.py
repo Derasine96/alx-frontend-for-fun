@@ -7,6 +7,7 @@ import markdown
 
 def markdown_to_html(input_filename, output_filename):
     """Convert Markdown file to HTML"""
+    input_filename = sys.argv[1]
     output_filename = sys.argv[2]
     if not os.path.exists(input_filename):
         sys.stderr.write(f"Missing {input_filename}\n")
