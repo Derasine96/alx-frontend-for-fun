@@ -7,10 +7,10 @@ import markdown
 
 def markdown_to_html(input_filename, output_filename):
     """Convert Markdown file to HTML"""
-    if len(sys.argv) < 2:
-        sys.stderr.write(
-            "Usage: ./markdown2html.py <input_file> <output_file>\n")
-        sys.exit(1)
+    # if len(sys.argv) < 2:
+    #     sys.stderr.write(
+    #         "Usage: ./markdown2html.py <input_file> <output_file>\n")
+    #     sys.exit(1)
     input_filename = sys.argv[1]
     output_filename = sys.argv[2]
     if not os.path.exists(input_filename):
@@ -25,4 +25,8 @@ def markdown_to_html(input_filename, output_filename):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        sys.stderr.write(
+            "Usage: ./markdown2html.py README.md README.html\n")
+        sys.exit(1)
     markdown_to_html(sys.argv[1], sys.argv[2])
