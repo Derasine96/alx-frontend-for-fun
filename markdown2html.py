@@ -22,6 +22,10 @@ def markdown_to_html(input_filename, output_filename):
         html_replacement = '<h{0}>\\1</h{0}>'.format(i)
         markdown_text = re.sub(
             markdown_pattern, html_replacement, markdown_text)
+    markdown_text = re.sub(r'^- (.*)$', r'<li>\1</li>',
+                           markdown_text, flags=re.MULTILINE)
+    markdown_text = re.sub(r'((<li>.*</li>\n*)+)',
+                           r'<ul>\n\1</ul>\n', markdown_text)
     with open(output_filename, 'w', encoding='utf-8') as f:
         f.write(markdown_text)
     sys.exit(0)
