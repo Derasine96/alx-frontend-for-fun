@@ -2,6 +2,7 @@
 """Markdown to HTML Converter"""
 import sys
 import os
+import re
 
 
 def markdown_to_html(input_filename, output_filename):
@@ -16,6 +17,11 @@ def markdown_to_html(input_filename, output_filename):
         sys.exit(1)
     with open(input_filename, 'r', encoding='utf-8') as f:
         markdown_text = f.read()
+    for i in range(6, 0, -1):
+        markdown_pattern = r'{} (.*)'.format('#' * i)
+        html_replacement = '<h{0}>\\1</h{0}>'.format(i)
+        markdown_text = re.sub(
+            markdown_pattern, html_replacement, markdown_text)
     with open(output_filename, 'w', encoding='utf-8') as f:
         f.write(markdown_text)
     sys.exit(0)
