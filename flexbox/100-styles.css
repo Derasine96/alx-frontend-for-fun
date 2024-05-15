@@ -517,7 +517,7 @@ ul.row {
 .section-hero .section-inner {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   min-height: 50vh;
 }
@@ -733,11 +733,11 @@ ul.row {
 }
 
 .post-content .img-caption {
-    margin: 1rem 0 ;
-    padding: 0 .5rem;
-    font-size: var(--font-size-small);
-    color: var(--color-grey);
-    text-align: center;
+  margin: 1rem 0;
+  padding: 0 0.5rem;
+  font-size: var(--font-size-small);
+  color: var(--color-grey);
+  text-align: center;
 }
 
 .post-aside {
