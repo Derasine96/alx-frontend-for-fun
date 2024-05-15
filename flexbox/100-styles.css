@@ -762,7 +762,7 @@ ul.row {
 .post-meta-list [class*="post-meta-"] {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 0.2rem solid --color-light-grey;
+  border-bottom: 0.2rem solid var(--color-light-grey);
 }
 
 .post-meta-list [class*="post-meta-"]:last-child {
