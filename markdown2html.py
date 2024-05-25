@@ -30,6 +30,9 @@ def markdown_to_html(input_filename, output_filename):
                            markdown_text, flags=re.MULTILINE)
     markdown_text = re.sub(r'((<li>.*</li>\n*)+)',
                            r'<ol>\n\1</ol>\n', markdown_text)
+    markdown_text = re.sub(r'\n\n', '</p>\n<p>', markdown_text)
+    markdown_text = '<p>' + markdown_text + '</p>'
+    markdown_text = re.sub(r'\n', '<br />', markdown_text)
     with open(output_filename, 'w', encoding='utf-8') as f:
         f.write(markdown_text)
     sys.exit(0)
